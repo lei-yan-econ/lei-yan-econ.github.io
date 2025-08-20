@@ -17,8 +17,6 @@ layout: default
   {% assign posts = site.posts | where_exp: "p", "p.categories contains page.category" | sort: "date" | reverse %}
 
   {% for post in posts %}
-    <div data-motion="fadeInLeft">
-      {% include post_main.html post=post %}
-    </div>
+    {% include post_main.html post=post %}
   {% endfor %}
 </section>
