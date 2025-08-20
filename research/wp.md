@@ -1,6 +1,6 @@
 ---
 layout: research_cat
 title: Working Papers
-permalink: /wp/
+permalink: /research/wp/
 category: Working Papers
 ---

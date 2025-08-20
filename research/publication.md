@@ -1,6 +1,6 @@
 ---
 layout: research_cat
 title: Publications
-permalink: /publication/
+permalink: /research/publication/
 category: Publications
 ---
