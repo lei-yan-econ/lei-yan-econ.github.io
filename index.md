@@ -12,13 +12,16 @@ main_content: >
   
 
   I am a Ph.D. candidate in the Department of Economics at National University of Singapore (NUS).
+
+
+  I work primarily with applied econometrics, and my current research topics include labor economics, international trade, and transportation.
 footer: true
 permalink: /
 ---
 ## More about me
 
-My favorate K-pop group is LE SSERAFIM. 
+My favorite K-pop group is LE SSERAFIM. 
 
 
-My favorate member is KAZUHA.
+My favorite member is KAZUHA.
 
