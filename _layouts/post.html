@@ -17,32 +17,13 @@ layout: default
     <div data-motion="fadeInLeft" data-motion-delay="0.4" data-motion-duration="0.4" class="flex flex-col md:flex-row text-sm font-mulish justify-between items-center">
       <div class="flex">
         <p>{{ page.author }}</p>
-        <p class="px-2">•</p>
-        <p>{{ page.date | date: "%-d %B %Y" }}</p>
-        <p class="px-2">•</p>
-        <p>
-          {% assign words = content | number_of_words %}
-          {% if words < 360 %} 1 min {% else %} {{ words | divided_by: 180 }} mins {% endif %} </p>
-      </div>
-      <div>
-        {% include sharing.html %}
+        <p class="px-2">.</p>
+        <p>{{ page.desctiption }}</p>
       </div>
     </div>
-
-    {% if page.image %}
-      <img data-motion="fadeInUp" data-motion-onscroll="false" data-motion-delay="0.8" data-motion-duration="0.2" class="w-full" src="{{page.image | relative_url}}" alt="{{page.title}}">
-    {% endif %}
 
     <div data-motion="fadeInUp" data-motion-onscroll="false" data-motion-delay="1" data-motion-duration="0.2" class="my-6">
       {{content}}
-    </div>
-
-    <div class="mx-auto py-8">
-      <p class="text-center font-extrabold italic">
-        {{ site.data[site.active_lang].strings.post.share | default:
-        site.data['en'].strings.post.share}}
-      </p>
-      {% include sharing.html %}
     </div>
 
     <div class="font-mulish flex justify-center mb-10">
