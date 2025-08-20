@@ -3,7 +3,7 @@ layout: home
 title: Home
 description: >-
   This is the homepage.
-image: /assets/images/main.avif
+image: /assets/images/me.jpg
 main_content: >
   # Yan LEI / 晏 雷
 
