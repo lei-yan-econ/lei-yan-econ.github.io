@@ -1,5 +1,5 @@
 <div class="flex flex-col-reverse justify-between md:flex-row mx-auto">
-  <div class="w-11/12">
+  <div class="w-1/2">
     <!-- 分类 -->
     <div class="mb-4 mt-4 md:mt-0 md:mb-6">
       <a href="{{site.url}}{{site.baseurl}}/category/{{ include.post.categories[0] | replace: ' ', '-' | downcase }}"
@@ -25,13 +25,13 @@
     </div>
   {% endif %}
 
-    <!-- 摘要 -->
-    {% if include.post.abstract %}
-      <div class="md:text-lg pb-6 font-semibold">
-        <span class="font-bold text-justify">Abstract: </span>
-        {{ include.post.abstract | strip_html }}
-      </div>
-    {% endif %}
+  <!-- 摘要 -->
+  {% if include.post.abstract %}
+    <div class="md:text-lg pb-6 font-semibold" style="text-align: justify;">
+      <span class="font-bold">Abstract: </span>
+      {{ include.post.abstract | strip_html }}
+    </div>
+  {% endif %}
 
   </div>
 </div>
