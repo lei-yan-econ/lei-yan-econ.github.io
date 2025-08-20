@@ -39,6 +39,11 @@ nav:
 # - title: Contact
 #    url: /contact/
 
+cat_order:
+  - Job Market Paper
+  - publications
+  - Working Papers
+
 ##
 # Plugins configuration
 ##

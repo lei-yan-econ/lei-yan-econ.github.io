@@ -15,15 +15,21 @@
     </h2>
 
     <!-- 作者 + 描述（同一行） -->
-    <div class="md:text-lg pb-6 font-semibold text-justify">
-      <p>
-        {{ include.post.author }}<span class="px-2">,</span>{{ include.post.description }}
-      </p>
-    </div>
+    {% if include.post.author %}
+      <div class="md:text-lg pb-6 font-semibold text-justify">
+        <p>
+          {{ include.post.author }}<span class="px-2">.</span>{{ include.post.description }}
+        </p>
+      </div>
+    {% endif %}
 
     <!-- 摘要 -->
-    <div class="md:text-lg pb-6 font-semibold text-justify">
-      {{ include.post.excerpt }}
-    </div>
+    {% if include.post.abstract %}
+      <div class="md:text-lg pb-6 font-semibold text-justify">
+        <span class="font-bold">Abstract: </span>
+        {{ include.post.abstract | strip_html }}
+      </div>
+    {% endif %}
+
   </div>
 </div>
