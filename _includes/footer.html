@@ -6,8 +6,8 @@
     <div class="flex flex-wrap text-left">
       <div class="w-full md:w-6/12 md:px-4">
         <p class="font-mulish text-lg dark:text-zinc-300 mt-2 mb-2">
-          {{ site.data[site.active_lang].strings.footer.description | default:
-          site.data['en'].strings.footer.description}}
+          {{ site.data[site.active_lang].strings.footer.title | default:
+          site.data['en'].strings.footer.title}}
         </p>
         {% if site.contact_channels_section %} {% include contact_channels.html
         %} {% endif%}
