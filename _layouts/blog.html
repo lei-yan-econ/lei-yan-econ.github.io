@@ -6,7 +6,7 @@ layout: default
   <div class="flex flex-wrap justify-center border-neutral-500 border-y mb-4 md:mb-12">
     {% for cat in site.cat_order %}
     <a
-      href="{{site.url}}{{site.baseurl}}/research/{{cat.title | replace: ' ', '-' | downcase}}"
+      href="{{ site.url }}{{ site.baseurl }}{{ cat.url }}"
       aria-label="Category {{cat.title}} page"
       class="block font-mulish hover:underline p-4 {% if cat.title == page.title %}font-black{% endif %}"
     >

@@ -1,0 +1,24 @@
+---
+layout: default
+---
+
+<section class="container mx-auto pb-10 pt-20 lg:pt-[90px] lg:pb-20">
+  <!-- 分类导航 -->
+  <div class="flex flex-wrap justify-center border-neutral-500 border-y mb-4 md:mb-12">
+    {% for cat in site.cat_order %}
+    <a href="{{ site.url }}{{ site.baseurl }}{{ cat.url }}"
+       class="block font-mulish hover:underline p-4 {% if cat.title == page.title %}font-black{% endif %}">
+      {{ cat.title | upcase }}
+    </a>
+    {% endfor %}
+  </div>
+
+  <!-- 分类文章列表 -->
+  {% assign posts = site.posts | where_exp: "p", "p.categories contains page.category" | sort: "date" | reverse %}
+
+  {% for post in posts %}
+    <div data-motion="fadeInLeft">
+      {% include post_main.html post=post %}
+    </div>
+  {% endfor %}
+</section>
