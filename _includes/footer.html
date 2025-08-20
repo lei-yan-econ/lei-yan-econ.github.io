@@ -24,12 +24,12 @@
               site.data['en'].strings.footer.pages}}
             </span>
             <ul>
-              {% for page in site.nav %} {% if page.footer %}
+              {% for page in site.nav %}
               <li>
                 <a class="font-mulish text-slate-600 hover:text-sky-400 dark:text-neutral-300 dark:hover:text-slate-200"
                   href="{{ page.url | relative_url }}">{{ page.title | default: page.name }}</a>
               </li>
-              {% endif%} {% endfor %}
+              {% endfor %}
             </ul>
           </div>
         </div>
