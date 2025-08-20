@@ -2,7 +2,7 @@
 layout: home
 title: Home
 description: >-
-  This is the homepage.
+  a Ph.D. candidate in the Department of Economics at National University of Singapore (NUS)
 image: /assets/images/me.jpg
 main_content: >
   # Yan LEI / 晏 雷
