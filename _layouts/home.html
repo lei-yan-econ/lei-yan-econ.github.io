@@ -23,7 +23,7 @@ layout: default
       site.data['en'].strings.home.contact_me}}
     </p>
 
-    {%include contact_channels.html %} {% endif %}
+    {% include contact_channels.html %} {% endif %}
   </div>
 </section>
 
@@ -47,6 +47,7 @@ layout: default
     aria-label="Jump to main section"
     class="dot w-3 h-3 block rounded-full border-2 border-gray-800 bg-gray-800 hover:scale-125"
   ></a>
+  {% if trimmed_content != "" %}
   <a
     href="#content"
     aria-label="Jump to content section"
