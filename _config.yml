@@ -41,11 +41,11 @@ nav:
 
 cat_order:
   - title: Job Market Paper
-    url: /research/jmp/
-  - title: publications
-    url: /research/publication/
+#    url: /research/jmp/
+  - title: Publications
+#    url: /research/publication/
   - title: Working Papers
-    url: /research/wp/
+#    url: /research/wp/
 
 ##
 # Plugins configuration
@@ -70,5 +70,5 @@ jekyll-archives:
   enabled:
     - categories
   layout: blog
-#  permalinks:
-#    category: "/category/:name/"
+  permalinks:
+    category: "/research/:name/"

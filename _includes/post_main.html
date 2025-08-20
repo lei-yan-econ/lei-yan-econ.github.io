@@ -14,14 +14,16 @@
       {{ include.post.title }}
     </h2>
 
-    <!-- 作者 + 描述（同一行） -->
-    {% if include.post.author %}
-      <div class="md:text-lg pb-6 font-semibold text-justify">
-        <p>
-          {{ include.post.author }}<p class="px-2">.</p>{{ include.post.description }}
-        </p>
-      </div>
-    {% endif %}
+  <!-- 作者 + 描述（同一行） -->
+  {% if include.post.author or include.post.description %}
+    <div class="md:text-lg pb-6 font-semibold text-justify">
+      <p>
+        {% if include.post.author %}{{ include.post.author }}{% endif %}
+        {% if include.post.author and include.post.description %} – {% endif %}
+        {% if include.post.description %}{{ include.post.description }}{% endif %}
+      </p>
+    </div>
+  {% endif %}
 
     <!-- 摘要 -->
     {% if include.post.abstract %}

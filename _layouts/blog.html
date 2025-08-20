@@ -8,7 +8,7 @@ layout: default
   >
     {% for cat in site.cat_order %}
     <a
-      href="{{ cat.url | relative_url }}"
+      href="{{site.url}}{{site.baseurl}}/research/{{category_name| replace: ' ', '-'| downcase}}"
       aria-label="Category {{cat.title}} page"
       class="block font-mulish hover:underline p-4 {% if cat.title == page.title %}font-black{% endif %}"
     >
@@ -17,8 +17,21 @@ layout: default
     {% endfor %}
   </div>
 
-  {% assign posts = page.posts | default: site.posts %} 
-  {% assign first_post = posts[0] %} 
+    {% assign posts = page.posts | default: site.posts %}
+
+    {%- comment -%}
+    优先找带 highlight:true 的文章（按 Jekyll 默认顺序，最新的在前）
+    {%- endcomment -%}
+    {% assign first_post = posts | where: "highlight", true | first %}
+
+    {% if first_post %}
+    {%- comment -%} 剩余文章 = 从当前 posts 里排除置顶的那篇 {%- endcomment -%}
+    {% assign rest_posts = posts | where_exp: "p", "p.id != first_post.id" %}
+    {% else %}
+    {%- comment -%} 没有置顶时，回退到默认逻辑：第一篇=最新一篇，其余为 slice {%- endcomment -%}
+    {% assign first_post = posts[0] %}
+    {% assign rest_posts = posts | slice: 1, posts.size %}
+    {% endif %}
 
   <div data-motion="fadeInLeft">
     {% include post_main.html post=first_post %}
