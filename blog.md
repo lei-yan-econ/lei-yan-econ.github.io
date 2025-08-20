@@ -1,8 +1,8 @@
 ---
 layout: blog
 title: Blog
-nav: true
-footer: true
+nav: false
+footer: false
 description: This is the Awesome Jekyll Theme blog section.
 ---
 
