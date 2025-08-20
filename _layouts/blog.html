@@ -7,13 +7,13 @@ layout: default
   <div
     class="flex flex-wrap justify-center border-neutral-500 border-y mb-4 md:mb-12"
   >
-    {% for category in site.categories %} {% assign category_name = category[0] %}
+    {% for cat in site.cat_order %}
     <a
-      href="{{site.url}}{{site.baseurl}}/category/{{category_name| replace: ' ', '-'| downcase}}"
-      aria-label="Category {{category_name}} page"
+      href="{{ cat.url | relative_url }}"
+      aria-label="Category {{cat.title}} page"
       class="block font-mulish hover:underline p-4 {% if category_name == page.title %}font-black{% endif %}"
     >
-      {{ category_name | upcase }}
+      {{ cat.title | upcase }}
     </a>
     {% endfor %}
   </div>
