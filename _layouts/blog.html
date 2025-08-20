@@ -3,7 +3,6 @@ layout: default
 ---
 
 <section class="container mx-auto pb-10 pt-20 lg:pt-[90px] lg:pb-20">
-  {% if site.categories.size > 0 %}
   <div
     class="flex flex-wrap justify-center border-neutral-500 border-y mb-4 md:mb-12"
   >
@@ -11,13 +10,12 @@ layout: default
     <a
       href="{{ cat.url | relative_url }}"
       aria-label="Category {{cat.title}} page"
-      class="block font-mulish hover:underline p-4 {% if category_name == page.title %}font-black{% endif %}"
+      class="block font-mulish hover:underline p-4 {% if cat.title == page.title %}font-black{% endif %}"
     >
       {{ cat.title | upcase }}
     </a>
     {% endfor %}
   </div>
-  {% endif %} 
 
   {% assign posts = page.posts | default: site.posts %} 
   {% assign first_post = posts[0] %} 
