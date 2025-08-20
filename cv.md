@@ -7,4 +7,4 @@ permalink: /cv/
 description: This is my CV.
 ---
 
-You may view my CV <a href="CV_YanLEI.pdf">here</a>.
+You may view my CV <a href="{{ site.baseurl }}/CV_YanLEI.pdf">here</a>.
