@@ -3,7 +3,7 @@ layout: project
 title: Curriculum Vitae
 nav: true
 footer: true
-permalink: /cv.html
+permalink: /cv/
 description: This is my CV.
 ---
 

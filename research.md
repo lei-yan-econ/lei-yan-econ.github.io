@@ -1,9 +1,9 @@
 ---
-layout: project
+layout: blog
 title: Research
 nav: true
 footer: true
-permalink: /research.html
+permalink: /research/
 description: This is the research section.
 ---
 

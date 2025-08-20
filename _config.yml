@@ -27,6 +27,18 @@ contact_channels:
   # threads: "https://www.threads.net/@example"
   # linkedin: "https://www.linkedin.com/in/example/"
 
+nav:
+  - title: Home
+    url: /
+  - title: Curriculum Vitae
+    url: /cv/
+  - title: Research
+    url: /research/
+#  - title: Teaching
+#    url: /teaching/
+# - title: Contact
+#    url: /contact/
+
 ##
 # Plugins configuration
 ##
