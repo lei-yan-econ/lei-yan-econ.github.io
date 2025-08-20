@@ -9,24 +9,43 @@ layout: default
     {%- assign current_cat = page.title -%}
     {%- for cat in site.cat_order -%}
       <a
-        href="{{site.url}}{{site.baseurl}}/category/{{ cat | replace: ' ', '-' | downcase }}"
-        aria-label="Category {{cat}} page"
-        class="block font-mulish hover:underline p-4 {% if cat == current_cat %}font-black{% endif %}"
+        href="{{ cat.url | relative_url }}"
+        aria-label="Category {{ cat.title }} page"
+        class="block font-mulish hover:underline p-4 {% if cat.title == current_cat %}font-black{% endif %}"
       >
-        {{ cat | upcase }}
+        {{ cat.title | upcase }}
       </a>
     {%- endfor -%}
   </div>
-  {%- endif -%} 
+  {%- endif -%}
 
-  {%- assign posts = page.posts | default: site.posts -%}
+  {%- comment -%}
+    取当前页面的文章集合（分类页用 page.posts，普通页用 site.posts），
+    先整体按时间倒序，再分两段渲染：先渲染含“Job Market Paper”的，后渲染其他的。
+  {%- endcomment -%}
+  {%- assign posts_source = page.posts | default: site.posts -%}
+  {%- assign sorted_posts = posts_source | sort: "date" | reverse -%}
 
   <div class="space-y-16">
-    {%- for post in posts -%}
-      <div data-motion="fadeInLeft">
-        {% include post_main.html post=post %}
-      </div>
+
+    {#-- 置顶区：JMP --#}
+    {%- for post in sorted_posts -%}
+      {%- if post.categories and post.categories contains 'Job Market Paper' -%}
+        <div data-motion="fadeInLeft">
+          {% include post_main.html post=post %}
+        </div>
+      {%- endif -%}
     {%- endfor -%}
+
+    {#-- 其余文章 --#}
+    {%- for post in sorted_posts -%}
+      {%- unless post.categories and post.categories contains 'Job Market Paper' -%}
+        <div data-motion="fadeInLeft">
+          {% include post_main.html post=post %}
+        </div>
+      {%- endunless -%}
+    {%- endfor -%}
+
   </div>
 
 </section>
