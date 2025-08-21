@@ -1,0 +1,21 @@
+<!-- _includes/custom_head.html -->
+<!-- 1) 任何被动画初始样式隐藏的区块，统统强制可见 -->
+<style>
+  html, body { opacity: 1 !important; visibility: visible !important; }
+  /* 常见动画/可见性类的兜底 */
+  [data-motion], [data-animate], .animate, .fade-in, .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  /* 若有通过 hidden/aria-hidden 初始隐藏 */
+  [hidden], [aria-hidden="true"] { display: block !important; }
+  /* 文字颜色兜底：亮色模式下确保有对比度 */
+  body { color: #111 !important; }
+  /* 暗色模式走系统媒体查询，不依赖 JS 注入 .dark */
+  @media (prefers-color-scheme: dark) {
+    body { color: #e5e7eb !important; background: #0b0b0b; }
+  }
+</style>
+
+<!-- 2) 无 JS 时也不至于“永远透明” -->
+<noscript><style>html,body{opacity:1!important;visibility:visible!important}</style></noscript>
