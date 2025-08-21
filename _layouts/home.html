@@ -6,14 +6,14 @@ layout: default
   id="main"
   class="flex flex-col md:flex-row items-center justify-center py-16 md:h-screen border-b-2 dark:border-0"
 >
-  <div class="md:mx-2" data-motion="fadeInLeft">
+  <div class="md:mx-2">
     <img
       class="object-cover w-full h-full sm:w-80 sm:h-80 sm:rounded-full"
       src="{{ page.image | relative_url | default: 'https://ik.imagekit.io/ikmedia/avif_samples/photo3_avif_6O32dW2NT.png' }}"
       alt="{{ page.description }}"
     />
   </div>
-  <div class="fadeIn mx-4 w-4/5 md:w-2/5 text-center md:text-left mt-6 md:mt-0" data-motion="fadeInRight">
+  <div class="fadeIn mx-4 w-4/5 md:w-2/5 text-center md:text-left mt-6 md:mt-0">
     <div class="prose md:prose-lg prose-h1:text-4xl prose-h2:text-3xl prose-h1:mb-1 dark:prose-invert">
       {{ page.main_content | markdownify }}
     </div>
@@ -34,7 +34,7 @@ layout: default
     id="content"
     class="inout container mx-auto flex flex-col items-center justify-center min-h-screen"
   >
-    <article class="prose prose-lg dark:prose-invert prose-h1:text-5xl prose-h2:text-3xl mx-auto py-16" data-motion="fadeInUp">{{content}}</article>
+    <article class="prose prose-lg dark:prose-invert prose-h1:text-5xl prose-h2:text-3xl mx-auto py-16">{{content}}</article>
   </section>
 {% endif %}
 
