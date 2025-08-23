@@ -31,7 +31,20 @@ layout: default
       {% assign rest_posts = posts | slice: 1, posts.size %}
     {% endif %}
 
-    {% include post_main_cat.html post=first_post %}
+    <!-- 分类 -->
+    <div class="mb-4 mt-4 md:mt-0 md:mb-6">
+      {% for cat in site.cat_order %}
+        {% if cat.title == first_post.categories[0] %}
+          <a href="{{ site.baseurl }}{{ cat.url }}"
+            aria-label="Category {{ first_post.categories[0] }} url"
+            class="font-mulish hover:underline text-neutral-600 dark:text-neutral-300">
+            {{ first_post.categories[0] | upcase }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% include post_main.html post=first_post %}
 
     {% if rest_posts.size > 0 %}
       <hr class="h-px my-12 bg-neutral-500 border-0" />
