@@ -1,5 +1,17 @@
 <div class="flex flex-col-reverse justify-between md:flex-row mx-auto">
   <div class="w-full">
+  <!-- 分类 -->
+  <div class="mb-4 mt-4 md:mt-0 md:mb-6">
+    {% for cat in site.cat_order %}
+      {% if cat.title == include.post.categories[0] %}
+        <a href="{{ site.baseurl }}{{ cat.url }}"
+          aria-label="Category {{ include.post.categories[0] }} url"
+          class="font-mulish hover:underline text-neutral-600 dark:text-neutral-300">
+          {{ include.post.categories[0] | upcase }}
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
 
   <!-- 标题 -->
   <a href="{{ include.post.url | relative_url }}" aria-label="Post Url">

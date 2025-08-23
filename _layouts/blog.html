@@ -31,7 +31,7 @@ layout: default
       {% assign rest_posts = posts | slice: 1, posts.size %}
     {% endif %}
 
-    {% include post_main.html post=first_post %}
+    {% include post_main_cat.html post=first_post %}
 
     {% if rest_posts.size > 0 %}
       <hr class="h-px my-12 bg-neutral-500 border-0" />
