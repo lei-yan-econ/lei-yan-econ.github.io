@@ -22,14 +22,17 @@ layout: default
       <div class="flex">
         <p>
           {% if page.author %}{{ page.author }}{% endif %}
-          {% if page.author and page.description %}<span class="px-2">•</span>{% endif %}
+        </p>
+        <p>
           {% if page.description %}{{ page.description }}{% endif %}
         </p>
       </div>
     </div>
 
     <div class="my-6" style="text-align: justify;">
+      {% if page.abstract %}
       <strong>Abstract:</strong> {{page.abstract}}
+      {% endif %}
     </div>
 
     <div class="my-6" style="text-align: justify;">
