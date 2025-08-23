@@ -6,7 +6,7 @@ layout: default
 <div class="container mx-auto">
   <div id="post" class="prose md:prose-lg dark:prose-invert prose-img:rounded-lg max-w-[75ch] mx-auto pb-10 pt-20 lg:pt-[90px] lg:pb-20">
     <div class="pb-4" data-motion="fadeInRight">
-      <a href="{{site.url}}/category/{{page.categories[0] | replace: ' ', '-' | downcase}}"
+      <a href="{{site.url}}/research/{{page.permalink}}"
         class="no-underline font-mulish text-sm hover:underline text-neutral-700 dark:text-neutral-300">
         {{ page.categories[0] | upcase }}
       </a>
@@ -22,13 +22,11 @@ layout: default
         <p>{{ page.desctiption }}</p>
       </div>
       -->
-      {% if include.page.author or include.page.description %}
-        <div class="md:text-lg pb-6 font-semibold">
-          <p>
-            {% if include.page.author %}{{ include.page.author }}{% endif %}
-            {% if include.page.author and include.page.description %} – {% endif %}
-            {% if include.page.description %}{{ include.page.description }}{% endif %}
-          </p>
+      {% if include.post.author or include.post.description %}
+        <div class="flex">
+          <p>{% if include.post.author %}{{ page.author }}{% endif %}</p>
+          <p>{% if include.post.author and include.post.description %} – {% endif %}</p>
+          <p>{% if include.post.description %}{{ page.description }}{% endif %}</p>
         </div>
       {% endif %}
     </div>
