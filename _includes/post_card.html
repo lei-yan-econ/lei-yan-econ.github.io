@@ -1,12 +1,17 @@
 <div class="flex flex-col justify-between">
   <div class="flex flex-col justify-between max-w-lg">
     <div class="pt-6">
-      <a href="{{site.url}}/research/{{page.permalink}}"
-        aria-label="Category {{include.post.categories[0]}} url"
-        class="font-mulish text-sm text-gray-600 dark:text-neutral-200 hover:underline">
-        {{ include.post.categories[0] | upcase }}
-      </a>
+      {% for cat in site.cat_order %}
+        {% if cat.title == include.post.categories[0] %}
+          <a href="{{ site.baseurl }}{{ cat.url }}"
+            aria-label="Category {{include.post.categories[0]}} url"
+            class="font-mulish text-sm text-gray-600 dark:text-neutral-200 hover:underline">
+            {{ include.post.categories[0] | upcase }}
+          </a>
+        {% endif %}
+      {% endfor %}
     </div>
+
     <a href="{{ include.post.url | relative_url }}" aria-label="Post Url">
       <h2 
         class="hover:underline decoration-2 underline-offset-2 font-semibold text-2xl text-neutral-800 dark:text-neutral-50 pt-6"
@@ -15,7 +20,9 @@
       </h2>
     </a>
   </div>
+
   <span class="text-sm text-gray-500 dark:text-neutral-200 pt-6">
     {{ include.post.author }}
   </span>
 </div>
+

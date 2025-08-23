@@ -24,9 +24,11 @@ layout: default
       -->
       {% if include.post.author or include.post.description %}
         <div class="flex">
-          <p>{% if include.post.author %}{{ page.author }}{% endif %}</p>
-          <p>{% if include.post.author and include.post.description %} – {% endif %}</p>
-          <p>{% if include.post.description %}{{ page.description }}{% endif %}</p>
+          <p>
+            {% if include.post.author %}{{ include.post.author }}{% endif %}
+            {% if include.post.author and include.post.description %} – {% endif %}
+            {% if include.post.description %}{{ include.post.description }}{% endif %}
+          </p>
         </div>
       {% endif %}
     </div>
