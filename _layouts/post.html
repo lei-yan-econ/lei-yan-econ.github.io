@@ -22,13 +22,14 @@ layout: default
         <p>{{ page.desctiption }}</p>
       </div>
       -->
-      {% if include.post.author or include.post.description %}
+      {% assign author = include.post.author %}
+      {% assign desc   = include.post.description %}
+
+      {% if author or desc %}
         <div class="flex">
-          <p>
-            {% if include.post.author %}{{ include.post.author }}{% endif %}
-            {% if include.post.author and include.post.description %} – {% endif %}
-            {% if include.post.description %}{{ include.post.description }}{% endif %}
-          </p>
+          {% if author %}<p>{{ author }}</p>{% endif %}
+          {% if author and desc %}<p class="px-2">–</p>{% endif %}
+          {% if desc %}<p>{{ desc }}</p>{% endif %}
         </div>
       {% endif %}
     </div>
