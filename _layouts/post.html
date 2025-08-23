@@ -14,7 +14,7 @@ layout: default
 
     <h1 class="text-left text-2xl font-bold md:text-5xl text-neutral-900 dark:text-neutral-100" data-motion="fadeInRight">{{page.title}}</h1>
 
-<div class="flex flex-col md:flex-row text-sm font-mulish justify-between items-center">
+<div class="flex flex-col md:flex-row text-base font-mulish justify-between items-center">
   <div class="flex">
     {% if page.author %}
       <p>{{ page.author }}</p>
@@ -29,6 +29,10 @@ layout: default
     {% endif %}
   </div>
 </div>
+
+    <div class="my-6">
+      <strong>Abstract:</strong> {{page.abstract}}
+    </div>
 
     <div class="my-6">
       {{content}}

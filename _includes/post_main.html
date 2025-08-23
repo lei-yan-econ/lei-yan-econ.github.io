@@ -13,12 +13,12 @@
     {% endfor %}
   </div>
 
-    <!-- 标题 -->
-    <a href="{{ include.post.url | relative_url }}" aria-label="Post Url">
-      <h2 class="text-2xl md:text-4xl font-bold text-gray-800 dark:text-neutral-100 pb-4">
-        {{ include.post.title }}
-      </h2>
-    </a>
+  <!-- 标题 -->
+  <a href="{{ include.post.url | relative_url }}" aria-label="Post Url">
+    <h2 class="text-2xl md:text-4xl font-bold text-gray-800 dark:text-neutral-100 pb-4 hover:underline underline-offset-2 decoration-2">
+      {{ include.post.title }}
+    </h2>
+  </a>
 
   <!-- 作者 + 描述（同一行） -->
   {% if include.post.author or include.post.description %}
@@ -33,7 +33,7 @@
 
   <!-- 摘要 -->
   {% if include.post.abstract %}
-    <div class="md:text-lg pb-6 font-semibold" style="text-align: justify;">
+    <div class="md:text-lg pb-6" style="text-align: justify;">
       <span class="font-bold">Abstract: </span>
       {{ include.post.abstract | strip_html }}
     </div>
