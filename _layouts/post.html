@@ -14,25 +14,21 @@ layout: default
 
     <h1 class="text-left text-2xl font-bold md:text-5xl text-neutral-900 dark:text-neutral-100" data-motion="fadeInRight">{{page.title}}</h1>
 
-    <div class="flex flex-col md:flex-row text-sm font-mulish justify-between items-center">
-      <!--
-      <div class="flex">
-        <p>{{ page.author }}</p>
-        <p class="px-2">.</p>
-        <p>{{ page.desctiption }}</p>
-      </div>
-      -->
-      {% assign author = include.post.author %}
-      {% assign desc   = include.post.description %}
-
-      {% if author or desc %}
-        <div class="flex">
-          {% if author %}<p>{{ author }}</p>{% endif %}
-          {% if author and desc %}<p class="px-2">–</p>{% endif %}
-          {% if desc %}<p>{{ desc }}</p>{% endif %}
-        </div>
-      {% endif %}
-    </div>
+<div class="flex flex-col md:flex-row text-sm font-mulish justify-between items-center">
+  <div class="flex">
+    {% if page.author %}
+      <p>{{ page.author }}</p>
+    {% endif %}
+    
+    {% if page.author and page.description %}
+      <p class="px-2">•</p>
+    {% endif %}
+    
+    {% if page.description %}
+      <p>{{ page.description }}</p>
+    {% endif %}
+  </div>
+</div>
 
     <div class="my-6">
       {{content}}
