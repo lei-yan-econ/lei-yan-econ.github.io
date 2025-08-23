@@ -15,11 +15,22 @@ layout: default
     <h1 class="text-left text-2xl font-bold md:text-5xl text-neutral-900 dark:text-neutral-100" data-motion="fadeInRight">{{page.title}}</h1>
 
     <div data-motion="fadeInLeft" data-motion-delay="0.4" data-motion-duration="0.4" class="flex flex-col md:flex-row text-sm font-mulish justify-between items-center">
+      <!--
       <div class="flex">
         <p>{{ page.author }}</p>
         <p class="px-2">.</p>
         <p>{{ page.desctiption }}</p>
       </div>
+      -->
+      {% if include.post.author or include.post.description %}
+        <div class="md:text-lg pb-6 font-semibold">
+          <p>
+            {% if include.post.author %}{{ include.post.author }}{% endif %}
+            {% if include.post.author and include.post.description %} – {% endif %}
+            {% if include.post.description %}{{ include.post.description }}{% endif %}
+          </p>
+        </div>
+      {% endif %}
     </div>
 
     <div data-motion="fadeInUp" data-motion-onscroll="false" data-motion-delay="1" data-motion-duration="0.2" class="my-6">
