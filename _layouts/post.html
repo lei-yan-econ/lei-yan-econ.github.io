@@ -5,28 +5,28 @@ layout: default
 <link rel="stylesheet" href="{{ '/assets/css/monokai.css' | relative_url }}">
 <div class="container mx-auto">
   <div id="post" class="prose md:prose-lg dark:prose-invert prose-img:rounded-lg max-w-[75ch] mx-auto pb-10 pt-20 lg:pt-[90px] lg:pb-20">
-    <div class="pb-4" data-motion="fadeInRight">
+    <div class="pb-4">
       {% for cat in site.cat_order %}
-      {% if cat.title == include.post.categories[0] %}
+      {% if cat.title == page.category %}
       <a href="{{ site.baseurl }}{{ cat.url }}"
         class="no-underline font-mulish text-sm hover:underline text-neutral-700 dark:text-neutral-300">
-        {{ page.categories[0] | upcase }}
+        {{ page.category | upcase }}
       </a>
       {% endif %}
       {% endfor %}
     </div>
 
-    <h1 class="text-left text-2xl font-bold md:text-5xl text-neutral-900 dark:text-neutral-100" data-motion="fadeInRight">{{page.title}}</h1>
+    <h1 class="text-left text-2xl font-bold md:text-5xl text-neutral-900 dark:text-neutral-100">{{page.title}}</h1>
 
-<div class="flex flex-col md:flex-row text-base font-mulish justify-between items-center">
-  <div class="flex">
-    <p>
-      {% if page.author %}{{ page.author }}{% endif %}
-      {% if page.author and page.description %}<span class="px-2">•</span>{% endif %}
-      {% if page.description %}{{ page.description }}{% endif %}
-    </p>
-  </div>
-</div>
+    <div class="flex flex-col md:flex-row text-base font-mulish justify-between items-center">
+      <div class="flex">
+        <p>
+          {% if page.author %}{{ page.author }}{% endif %}
+          {% if page.author and page.description %}<span class="px-2">•</span>{% endif %}
+          {% if page.description %}{{ page.description }}{% endif %}
+        </p>
+      </div>
+    </div>
 
     <div class="my-6" style="text-align: justify;">
       <strong>Abstract:</strong> {{page.abstract}}
